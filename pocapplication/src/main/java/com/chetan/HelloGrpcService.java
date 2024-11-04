@@ -25,7 +25,7 @@ public class HelloGrpcService extends MutinyHelloGrpcGrpc.HelloGrpcImplBase {
         return Uni.createFrom().item(() -> {
             PersonEntity person = PersonEntity.findById(request.getId());
             if (person != null) {
-                return personToResponse(person, "Person found");
+                return personToResponse(person, "Person found: "+person.getName());
             } else {
                 return PersonResponse.newBuilder()
                         .setMessage("Person not found")
