@@ -9,12 +9,12 @@ check_status() {
 }
 
 # Start the build process
-echo "Starting the build process..."
+echo "Building the Quarkus application..."
 ./gradlew clean build
 check_status
 
-echo "Build successful. Starting Quarkus in local mode..."
-./gradlew quarkusDev
+echo "Building Docker images and starting services..."
+docker-compose up --build -d
 check_status
 
-echo "Quarkus is running in local mode."
+echo "Services are up and running. Access the application at http://localhost:8080"
