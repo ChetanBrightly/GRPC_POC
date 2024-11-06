@@ -16,6 +16,11 @@ dependencies {
     implementation 'io.quarkus:quarkus-arc'
     implementation 'io.quarkus:quarkus-hibernate-orm'
     testImplementation 'io.quarkus:quarkus-junit5'
+
+//    Liquibase
+    implementation 'io.quarkus:quarkus-liquibase'
+    implementation 'org.liquibase:liquibase-core'
+    runtimeOnly 'org.postgresql:postgresql'
 }
 
 group 'com.chetan'
@@ -37,3 +42,18 @@ compileJava {
 compileTestJava {
     options.encoding = 'UTF-8'
 }
+
+/********************************************************/
+/*              CHECK STYLE CONFIGURATION               */
+/********************************************************/
+//
+//def configDir = "${project.rootDir}/config"
+//checkstyle {
+//    toolVersion '8.36.1'
+//    configFile file("$configDir/checkstyle/checkstyle.xml")
+//    checkstyleTest.enabled = false
+//}
+//checkstyleMain {
+//    source = 'src/main'
+//}
+//quarkusBuild.dependsOn checkstyleMain
