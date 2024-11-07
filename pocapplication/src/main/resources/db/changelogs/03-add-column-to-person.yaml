@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: ChetanBrightly
+      changes:
+        - addColumn:
+            tableName: person
+            columns:
+              - column:
+                  name: phone
+                  type: varchar(255)
